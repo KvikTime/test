@@ -1,35 +1,27 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
-  <div class="container">
-    <h1>Форма опроса</h1>
-    <form action="test.php" class="form" method="GET">
-      <label for="name">Имя:</label>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="email">Электронная почта:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="phone">Номер телефона:</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
-
-        <label for="file">Прикрепить файл:</label>
-        <input type="file" id="file" name="file"><br><br>
-
-        <input type="submit" value="Отправить">
-    </form>
-    <div class="result">
-
-    </div>
-  </div>
+  <form action="./test.php" method="post">
+  <!--Тег используется для группировки связанных элементов в форме-->
+  <fieldset>
+  <!--Тег задает заголовок для групповых элементов-->
+  <legend>Оставьте сообщение:</legend>
+  Ваше имя:
+  <!--Устанавливает однострочное текстовое поле ввода:-->
+  <input type="text" name="name">
+  <!--Используется для полей ввода, которые должны содержать адрес электронной почты.-->
+  E-mail:
+  <input type="text" name="email">
+  Номер телефона:
+  <input type="text" name="phone">
+  <!--Устанавливает кнопку для отправки данных формы в обработчик формы.-->
+  <input type="submit" value="Отправить сообщение">
+  </fieldset>
+  </form>
 </body>
-
 </html>
