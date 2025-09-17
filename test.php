@@ -1,12 +1,12 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Получаем данные из формы
-    $name = strip_tags(trim($_POST["name"]));
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $phone = strip_tags(trim($_POST["phone"]));
+    $name = strip_tags(trim($_GET["name"]));
+    $email = filter_var(trim($_GET["email"]), FILTER_SANITIZE_EMAIL);
+    $phone = strip_tags(trim($_GET["phone"]));
 
     // Указываем адрес, на который будет отправлено письмо
-    $to = "kurzaevvitek@mail.ru"; // Замени на свой email
+    $to = "kurzaevvitek@mail.ru";
 
     // Формируем тему письма
     $subject = "Новое сообщение с сайта от $name";
@@ -52,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 } else {
-    // Если данные не были отправлены методом POST, перенаправляем на форму
-    header("Location: form.html");
+    // Если данные не были отправлены методом GET, перенаправляем на форму
+    header("Location: index.html");
     exit;
 }
 ?>
