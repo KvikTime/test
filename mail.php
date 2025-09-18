@@ -9,7 +9,7 @@ $file = $_FILES['file'];
 
 $c = true;
 // Формирование самого письма
-$title = "Расчет стоимости";
+$title = "Заявка на регистрацию";
 foreach ( $_POST as $key => $value ) {
   if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
     $body .= "
