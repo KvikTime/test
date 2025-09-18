@@ -4,12 +4,12 @@ require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
-$title = "Заявка на регистрацию";
+$title = "Тема письма";
 $file = $_FILES['file'];
 
 $c = true;
 // Формирование самого письма
-$title = "Заголовок письма";
+$title = "Расчет стоимости";
 foreach ( $_POST as $key => $value ) {
   if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
     $body .= "
@@ -32,16 +32,16 @@ try {
   $mail->SMTPAuth   = true;
 
   // Настройки вашей почты
-  $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-  $mail->Username   = 'nisevitek@gmail.com'; // Логин на почте
-  $mail->Password   = 'virp pths nudm rfyv'; // Пароль на почте
+  $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера вашей почты
+  $mail->Username   = 'jazz.top@yandex.ru'; // Логин на почте
+  $mail->Password   = 'kwaauswgonyzoblp'; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('nisevitek@gmail.com', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('jazz.top@yandex.ru', 'Новое обращение'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('nisevitek@gmail.com');
+  $mail->addAddress('jazz.top@yandex.ru');
 
   // Прикрипление файлов к письму
   if (!empty($file['name'][0])) {
