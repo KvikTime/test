@@ -1,27 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Страница регистрации</title>
 </head>
+
 <body>
-  <form action="./test.php" method="post">
-  <!--Тег используется для группировки связанных элементов в форме-->
-  <fieldset>
-  <!--Тег задает заголовок для групповых элементов-->
-  <legend>Оставьте сообщение:</legend>
-  Ваше имя:
-  <!--Устанавливает однострочное текстовое поле ввода:-->
-  <input type="text" name="name">
-  <!--Используется для полей ввода, которые должны содержать адрес электронной почты.-->
-  E-mail:
-  <input type="text" name="email">
-  Номер телефона:
-  <input type="text" name="phone">
-  <!--Устанавливает кнопку для отправки данных формы в обработчик формы.-->
-  <input type="submit" value="Отправить сообщение">
-  </fieldset>
-  </form>
+  <header class="header"></header>
+  <main></main>
+  <footer class="footer"></footer>
+
+  <!-- Модальное окно -->
+    <div class="modal">
+      <div class="modal__wrapper">
+        <button class="modal__btn" type="button">
+          <svg class="footer__copyright-icon" width="10" height="10" aria-hidden="true">
+            <use xlink:href="sprite/sprite.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <input class="modal__input input--register" type="radio" name="choice" id="register-radio" checked>
+        <input class="modal__input input--entrance" type="radio" name="choice" id="entrance-radio">
+    
+        <div class="modal__selector">
+          <label class="modal__label label--register" for="register-radio">
+            Регистрация
+          </label>
+          <label class="modal__label label--entrance" for="entrance-radio">
+            Вход
+          </label>
+        </div>
+    
+        <div class="forms-container">
+          <form class="form form--register" action="mail.php">
+            <h2 class="form__title">Регистрация пользователя</h2>
+            <span class="form__description">Заполните данные, чтобы зарегистрироваться</span>
+            <input class="form__field" type="text" name="name" placeholder="Ваше ФИО" required>
+            <input class="form__field" type="email" name="mail" placeholder="Электронная почта*" required>
+            <input class="form__field" type="tel" name="phone" placeholder="+7 (999) 999–99–99*" required>
+            <label class="form__label-file">
+              <input class="form__file" type="file" name="file">
+              <svg class="footer__copyright-icon" width="16" height="20" aria-hidden="true">
+                <use xlink:href="sprite/sprite.svg#icon-file"></use>
+              </svg>
+              Прикрепить файл
+            </label>
+    
+            <button class="btn" type="submit">Зарегистрироваться</button>
+    
+            <div class="custom-checkbox">
+              <input class="custom-checkbox__input visually-hidden" type="checkbox" name="agreement" id="user-agreement" required>
+              <label class="custom-checkbox__label" for="user-agreement">Даю согласие на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;<a class="custom-checkbox__link" href="#" aria-label="Перейти к политике конфиденциальности ">политикой конфиденциальности</a></label>
+            </div>
+          </form>
+    
+          <form class="form form--entrance" action="#" autocomplete="off">
+            <h2 class="form__title">Авторизация пользователя</h2>
+            <span class="form__description">Заполните данные, чтобы войти</span>
+            <input class="form__field" type="email" name="mail" placeholder="Электронная почта*" required>
+            <input class="form__field" type="password" name="password" placeholder="Пароль" required>
+    
+            <button class="btn" type="submit">Войти</button>
+    
+           <span class="form__recovery">Забыли пароль? Мы&nbsp;поможем его <a class="form__link" href="recovery.html">восстановить</a>.</span>
+          </form>
+
+          <form class="form form--entrance-active" action="#" autocomplete="off">
+            <h2 class="form__title">Восстановление пароля</h2>
+            <span class="form__description">Укажите адрес электронной почты, который вы&nbsp;вводили при регистрации</span>
+            <input class="form__field" type="email" name="mail" placeholder="Электронная почта*" required>
+    
+            <button class="btn" type="submit">Восстановить</button>
+          </form> 
+
+          <div class="successfully">
+            <div class="successfully__img">
+              <img src="img/ok.png" alt="Успешно">
+            </div>
+            <h2 class="successfully__title">Восстановление пароля</h2>
+            <span class="successfully__description">Укажите адрес электронной почты, который вы&nbsp;вводили при регистрации</span>
+            <button class="btn" type="submit">На главную</button>
+          </div>
+        </div>
+      </div>
+</div>
+
+<script defer src="index.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,25 @@
+.btn{
+  margin-bottom: 10px;
+  padding: 14px 24px;
+  align-self: flex-start;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 122%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--white);
+  background: var(--blue);
+  border-radius: 8px;
+}
+
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: no-drop;
+}
+
+@media (max-width: 540px) {
+  .btn{
+    font-size: 16px;
+    line-height: 137%;
+  }
+}

@@ -1,0 +1,93 @@
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form__description {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--gray);
+}
+
+.form__field {
+  margin-bottom: 10px;
+  padding: 15.5px 20px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--blue);
+  border: 1px solid var(--azure);
+  border-radius: 8px;
+  outline: none;
+}
+
+.form__field:last-child {
+  margin-bottom: 20px;
+}
+
+.form__field::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--azure);
+}
+
+.form__field:focus-visible {
+  border: 1px solid var(--blue);
+}
+
+.form__label-file {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.form__file { 
+  display: none;
+}
+
+.form__recovery {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--black);
+}
+
+.form__link {
+  color: var(--blue);
+}
+
+.form--entrance-active{
+  display: none;
+  align-items: center;
+}
+
+
+.form--entrance-active button{
+  align-self: center;
+}
+
+.form--entrance-active .form__field{
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 540px) {
+
+  .form__title {
+    font-size: 20px;
+  }
+  .form__description {
+    font-size: 16px;
+  }
+  .form__file {
+    font-size: 14px;
+  }
+
+}
